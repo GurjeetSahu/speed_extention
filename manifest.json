@@ -1,0 +1,26 @@
+{
+  "name": "Speed Control",
+  "version": "1.1",
+  "manifest_version": 2,
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "tabCapture",
+    "declarativeContent"
+  ],
+  "browser_action": {
+    "default_title": "Speed Control",
+    "default_popup": "main.html",
+    "background": {
+      "service_worker": "index.js"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["index.js"]
+    }
+  ]
+}
